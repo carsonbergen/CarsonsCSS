@@ -1,0 +1,228 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    :root {
+        @apply  font-roboto-slab
+                text-base md:text-lg
+                /* Colours */
+                bg-primary text-secondary
+                dark:bg-secondary dark:text-primary;
+        /* Colour definitions */
+        --cbPurple: #a07cff;
+        --cbBlue: #3692e3;
+        --cbAqua: #48fabd;
+        --cbGreen: #60e336;
+        --cbYellow: #fbeb3c;
+    }
+
+    .sidebar-button {
+        @apply  
+            fixed top-0 right-0
+            px-4 pt-4;
+    }
+
+    .inline-link {
+        @apply  font-bold border-b-[2px] border-dashed
+                border-secondary dark:border-yellow;
+    }
+
+    .card {
+        @apply  border-[2px] border-dashed
+                border-secondary;
+    }
+
+    .card-body {
+        @apply  /* Small devices */
+                pt-2 pb-8 px-[0.5rem]
+                /* Larger devices */
+                md:pt-4 md:px-4 md:pb-8;
+    }
+
+    .card-title {
+        @apply text-lg pt-0 px-2;
+    }
+
+    .image-container {
+        @apply  grid grid-flow-row 
+                grid-cols-1 md:grid-cols-2 lg:grid-cols-3
+                space-y-1 
+                max-w-3xl
+                place-content-around
+                overflow-clip;
+    }
+
+    .image {
+        @apply px-2 w-fit h-fit self-center;
+    }
+
+    .three-d-model-viewer {
+        @apply  flex flex-col
+                w-full h-[250px] md:h-[350px] lg:h-[500px] border-dashed border-[2px]
+                /* Colours */
+                border-purple dark:border-aqua;
+    }
+
+    .page {
+        @apply  
+            flex flex-col
+            min-h-screen w-full absolute pb-24
+            place-items-center
+            /* Colours */
+            bg-primary text-secondary
+            dark:bg-secondary dark:text-primary;
+    }
+    
+    .page-header {
+            @apply 
+                pt-2 w-full
+                border-b-[2px] border-dashed
+                font-bold
+                text-3xl uppercase
+                /* colours */
+                border-red dark:border-aqua;
+    }
+    
+    .page-dotted-divider {
+        @apply border-t-[2px] border-dashed bg-secondary;
+    }
+
+    .page-paragraph {
+        @apply  
+                text-base whitespace-pre-wrap
+                place-content-center 
+                font-normal
+                normal-case
+                /* Colours */
+                border-secondary;
+    }
+
+    .page-dropdown {
+        @apply 
+            right-0 top-0 rounded-none
+            /* Colours */
+            bg-primary text-secondary
+            /* Extra */
+            ;
+
+    }
+
+    .page-dropdown-button {
+        @apply
+            border-2
+            /* Colours */
+            text-secondary border-secondary border-dashed
+            dark:text-primary dark:border-primary dark:bg-none
+            w-4 h-4;
+    }
+
+    .page-navbar {
+        @apply  grid grid-flow-col 
+                place-content-center
+                w-full px-2 h-[200px]
+                content-center
+                border-b-[2px] border-dashed
+                /* Colours */
+                bg-primary dark:bg-secondary
+                border-red dark:border-aqua;
+    }
+
+    @keyframes gradient {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    .page-navbar-group {
+        @apply flex-none mx-auto place-self-end;
+    }
+
+    .page-basic-button {
+        @apply  border-b-2 border-dashed
+                text-secondary border-secondary
+                hover:bg-secondary hover:bg-opacity-25
+                dark:text-primary dark:border-primary
+                dark:hover:bg-primary dark:hover:bg-opacity-25;
+    }
+
+    .page-link {
+        @apply page-basic-button appearance-none;
+    }
+
+    .page-sidebar-button {
+        @apply  page-basic-button
+                flex items-start;
+    }
+
+    .page-blog-description {
+        @apply italic;
+    }
+
+    .page-blog-date {
+        @apply  italic text-sm;
+    }
+
+    .page-list-item {
+        @apply  flex flex-col
+                border-[2px] border-dashed 
+                mt-2 p-4 pt-2 space-y-2
+                border-secondary;
+    }
+
+    .page-link-button {
+        @apply page-link border-[2px] px-2 max-w-[50vw];
+    }
+
+    .page-footer {
+        @apply 
+            border-t-[2px] border-dashed
+            grid grid-flow-col
+            w-full min-h-fit
+            /* Padding */
+            px-4 pb-8 pt-1
+
+            space-x-4 justify-items-stretch
+            /* Placement */
+            bottom-0 fixed
+            /* Colours */
+            bg-secondary text-primary
+            border-primary;
+    }
+
+    .page-footer-header {
+        @apply
+            font-bold text-base;
+    }
+
+    .page-body {
+        @apply  p-8 md:px-8 lg:px-12
+                flex flex-col w-full max-w-6xl
+                place-items-center;
+    }
+
+    .page-sidebar {
+        @apply 
+            border-l-[2px] border-dashed z-10
+            fixed top-0 right-0
+            px-4 pt-4
+            w-[35vw] h-full 
+            /* Colours */
+            bg-primary
+            border-secondary
+            dark:bg-secondary
+            dark:border-primary;
+    }
+
+    .page-card {
+        @apply  card rounded-none p-0
+                border-[2px] border-dashed
+                border-secondary dark:border-primary;
+    }
+}
