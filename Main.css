@@ -311,9 +311,8 @@
                 w-full max-w-6xl
                 /* Colours */
                 prose-blockquote:px-4
-                prose-blockquote:bg-yellow dark:prose-blockquote:bg-aqua 
-                prose-blockquote:text-secondary dark:prose-blockquote:text-secondary
-                /* Header */
+                prose-blockquote:bg-yellow dark:prose-blockquote:bg-purple 
+                prose-blockquote:text-secondary dark:prose-blockquote:text-primary                /* Header */
                 prose-headings:border-b-[2px] prose-headings:border-dashed 
                 prose-headings:border-secondary dark:prose-headings:border-primary
                 prose-headings:text-secondary dark:prose-headings:text-primary
