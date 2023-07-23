@@ -76,6 +76,14 @@
                 border-purple dark:border-aqua;
     }
 
+    .blog-image {
+        @apply  flex flex-col aspect-auto
+                w-full h-auto 
+                border-dashed border-[2px]
+                /* Colours */
+                border-purple dark:border-aqua;
+    }
+
     /* Page stuff */
 
     .page {
