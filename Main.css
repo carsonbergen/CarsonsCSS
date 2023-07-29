@@ -27,6 +27,7 @@
         --cbAqua: #48fabd;
         --cbGreen: #60e336;
         --cbYellow: #fbeb3c;
+        font-display: swap;
     }
 
     .sidebar-button {
