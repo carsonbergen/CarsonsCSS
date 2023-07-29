@@ -7,10 +7,12 @@
     @font-face {
       font-family: 'Roboto Slab';
       src: url('/fonts/Roboto_Slab/RobotoSlab-VariableFont_wght.ttf') format('truetype');
+      font-display: swap;
     }
     @font-face {
       font-family: 'Acidic';
       src: url('/fonts/Acidic/Acidic.TTF') format('truetype');
+      font-display: swap;
     }
 }
 
@@ -27,7 +29,6 @@
         --cbAqua: #48fabd;
         --cbGreen: #60e336;
         --cbYellow: #fbeb3c;
-        font-display: swap;
     }
 
     .sidebar-button {
