@@ -4,17 +4,27 @@
 
 @layer components {
     :root {
-        @apply  font-roboto-slab
+        @apply  font-montserrat
+                font-bold
+                /* cursor-none */
                 text-base md:text-lg
                 /* Colours */
-                bg-primary text-secondary
-                dark:bg-secondary dark:text-primary;
+                bg-primary text-secondary;
+                /* dark:bg-secondary dark:text-primary; */
         /* Colour definitions */
         --cbPurple: #a07cff;
         --cbBlue: #3692e3;
         --cbAqua: #48fabd;
         --cbGreen: #60e336;
         --cbYellow: #fbeb3c;
+        --cbBlack: #0a0a0a;
+        --cbWhite: #fafafa;
+    }
+
+    .checkerboard {
+        background-image: linear-gradient(45deg, #0a0a0a 25%, transparent 25%), linear-gradient(-45deg, #0a0a0a 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #0a0a0a 75%), linear-gradient(-45deg, transparent 75%, #0a0a0a 75%);
+        background-size: 20px 20px;
+        background-position: 0 0, 0 10px, 10px -10px, -10px 0px;      
     }
 
     .sidebar-button {
@@ -24,8 +34,7 @@
     }
 
     .inline-link {
-        @apply  font-bold border-b-[2px] border-dashed
-                border-secondary dark:border-yellow;
+        @apply  font-semibold cursor-pointer w-auto h-auto;
     }
 
     .card {
@@ -66,9 +75,7 @@
 
     .page {
         @apply  
-            flex flex-col
             min-h-screen w-full absolute pb-24
-            place-items-center
             /* Colours */
             bg-primary text-secondary
             dark:bg-secondary dark:text-primary;

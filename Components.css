@@ -1,0 +1,164 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .dropdown-parent {
+        @apply px-2 pt-4 flex flex-col w-full h-screen;
+    }
+    
+    .regular-backdrop {
+        @apply fixed opacity-100 w-full h-full bg-primary dark:bg-secondary;
+    }
+
+    .animated-backdrop { 
+        @apply fixed opacity-[0.05] w-full h-full blur-3xl animate-backdrop-gradient;
+    }
+
+    .animated-backdrop-alternate {
+        @apply fixed opacity-[0.1] w-full h-full blur-3xl animate-backdrop-gradient-alternate;
+    }
+
+    .header {
+        @apply  text-secondary dark:text-primary text-3xl z-50 glow-text
+                 flex flex-row items-baseline;
+    }
+
+    .cursor {
+        @apply w-10 h-10 bg-transparent  rounded-full backdrop-invert z-[9999];
+    }
+
+    .glow-text {
+        @apply dark:dark-glow-text;
+        /* transition: 1s ease-in; */
+        animation: outLightFrames 0.5s ease 1 forwards;
+        
+    }
+
+    .glow-text:hover {
+        @apply dark:dark-glow-text;
+        /* transition: 1s ease-out; */
+        animation: inLightFrames 0.5s ease 1 forwards;
+    }
+
+    .dark-glow-text {
+        /* transition: 1s ease-in; */
+        animation: outDarkFrames 0.5s ease 1 forwards;
+        
+    }
+
+    .dark-glow-text:hover {
+        /* transition: 1s ease-out; */
+        animation: inDarkFrames 0.5s ease 1 forwards;
+    }
+
+    .glow-light {
+        text-shadow: 0px 0px 4px #fbeb3c, 0px 8px 8px #f7552f;
+        filter: blur(1px) drop-shadow(0px 0px 4px #fbeb3c7d) drop-shadow(0px 8px 8px #f7552f7d);
+    }
+
+    .glow-dark {
+        text-shadow: 0px 0px 4px #48fabd, 0px 8px 8px #a07cff;
+        filter: blur(1px) drop-shadow(0px 0px 4px #48fabd7d) drop-shadow(0px 8px 8px #a07cff7d);
+    }
+
+    @keyframes inLightFrames {
+        0% { 
+            /* text-shadow: 0px 0px 0px #fbeb3c, 0px 0px 0px #f7552f; */
+            filter: blur(0px) drop-shadow(0px 0px 0px #0a0a0a);
+        }
+        25% { 
+            /* text-shadow: 0px 0px 1px #fbeb3c, 0px 0px 2px #f7552f; */
+            filter: blur(0.5px) drop-shadow(0px 0px 1px #fbeb3c7d) drop-shadow(0px 0px 2px #f7552f7d);
+        }
+        50% {
+            /* text-shadow: 0px 0px 2px #fbeb3c, 0px 2px 4px #f7552f; */
+            filter: blur(0.65px) drop-shadow(0px 0px 2px #fbeb3c7d) drop-shadow(0px 2px 4px #f7552f7d);
+        }
+        75% {
+            /* text-shadow: 0px 0px 3px #fbeb3c, 0px 4px 6px #f7552f; */
+            filter: blur(0.75px) drop-shadow(0px 0px 3px #fbeb3c7d) drop-shadow(0px 4px 6px #f7552f7d);
+        }
+        100% {
+            /* text-shadow: 0px 0px 4px #fbeb3c, 0px 8px 8px #f7552f; */
+            filter: blur(1px) drop-shadow(0px 0px 4px #fbeb3c7d) drop-shadow(0px 8px 8px #f7552f7d);
+        }
+    }
+
+    @keyframes outLightFrames {
+        0% {
+            /* text-shadow: 0px 0px 4px #fbeb3c, 0px 8px 8px #f7552f; */
+            filter: blur(1.5px) drop-shadow(0px 0px 4px #fbeb3c7d) drop-shadow(0px 8px 8px #f7552f7d);
+        }
+        25% {
+            /* text-shadow: 0px 0px 3px #fbeb3c, 0px 4px 6px #f7552f; */
+            filter: blur(1.25px) drop-shadow(0px 0px 3px #fbeb3c7d) drop-shadow(0px 4px 6px #f7552f7d);
+        }
+        50% {
+            /* text-shadow: 0px 0px 2px #fbeb3c, 0px 2px 4px #f7552f; */
+            filter: blur(0.75px) drop-shadow(0px 0px 2px #fbeb3c7d) drop-shadow(0px 2px 4px #f7552f7d);
+        }
+        75% { 
+            /* text-shadow: 0px 0px 1px #fbeb3c, 0px 0px 2px #f7552f; */
+            filter: blur(0.5px) drop-shadow(0px 0px 1px #fbeb3c7d) drop-shadow(0px 0px 2px #f7552f7d);
+        }
+        95% { 
+            /* text-shadow: 0px 0px 2px #fbeb3c, 0px 0px 0px #f7552f; */
+            filter: blur(0.25px) drop-shadow(0px 0px 2px #fbeb3c7d) drop-shadow(0px 0px 0px #f7552f7d);
+        }
+        100% { 
+            /* text-shadow: 0px 0px 3px #fafafa; */
+            filter: blur(0px) drop-shadow(0px 0px 0px #0a0a0a);
+        }
+    }
+
+    @keyframes inDarkFrames {
+        0% { 
+            /* text-shadow: 0px 0px 0px #48fabd, 0px 0px 0px #a07cff; */
+            filter: blur(0px) drop-shadow(0px 0px 0px #fafafa);
+        }
+        25% { 
+            /* text-shadow: 0px 0px 1px #48fabd, 0px 0px 2px #a07cff; */
+            filter: blur(0.5px) drop-shadow(0px 0px 1px #48fabd7d) drop-shadow(0px 0px 2px #a07cff7d);
+        }
+        50% {
+            /* text-shadow: 0px 0px 2px #48fabd, 0px 2px 4px #a07cff; */
+            filter: blur(0.65px) drop-shadow(0px 0px 2px #48fabd7d) drop-shadow(0px 2px 4px #a07cff7d);
+        }
+        75% {
+            /* text-shadow: 0px 0px 3px #48fabd, 0px 4px 6px #a07cff; */
+            filter: blur(0.75px) drop-shadow(0px 0px 3px #48fabd7d) drop-shadow(0px 4px 6px #a07cff7d);
+        }
+        100% {
+            /* text-shadow: 0px 0px 4px #48fabd, 0px 8px 8px #a07cff; */
+            filter: blur(1px) drop-shadow(0px 0px 4px #48fabd7d) drop-shadow(0px 8px 8px #a07cff7d);
+        }
+    }
+
+    @keyframes outDarkFrames {
+        0% {
+            /* text-shadow: 0px 0px 4px #48fabd, 0px 8px 8px #a07cff; */
+            filter: blur(1.5px) drop-shadow(0px 0px 4px #48fabd7d) drop-shadow(0px 8px 8px #a07cff7d);
+        }
+        25% {
+            /* text-shadow: 0px 0px 3px #48fabd, 0px 4px 6px #a07cff; */
+            filter: blur(1.25px) drop-shadow(0px 0px 3px #48fabd7d) drop-shadow(0px 4px 6px #a07cff7d);
+        }
+        50% {
+            /* text-shadow: 0px 0px 2px #48fabd, 0px 2px 4px #a07cff; */
+            filter: blur(0.75px) drop-shadow(0px 0px 2px #48fabd7d) drop-shadow(0px 2px 4px #a07cff7d);
+        }
+        75% { 
+            /* text-shadow: 0px 0px 1px #48fabd, 0px 0px 2px #a07cff; */
+            filter: blur(0.5px) drop-shadow(0px 0px 1px #48fabd7d) drop-shadow(0px 0px 2px #a07cff7d);
+        }
+        95% { 
+            /* text-shadow: 0px 0px 2px #48fabd, 0px 0px 0px #a07cff; */
+            filter: blur(0.25px) drop-shadow(0px 0px 2px #48fabd7d) drop-shadow(0px 0px 0px #a07cff7d);
+        }
+        100% { 
+            /* text-shadow: 0px 0px 3px #fafafa; */
+            filter: blur(0px) drop-shadow(0px 0px 0px #fafafa);
+        }
+    }
+}
