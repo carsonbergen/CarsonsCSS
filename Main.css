@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    /* Roboto Slab */
+    @font-face {
+      font-family: 'Roboto Slab';
+      src: url('/fonts/Roboto_Slab/RobotoSlab-VariableFont_wght.ttf') format('truetype');
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Acidic';
+      src: url('/fonts/Acidic/Acidic.TTF') format('truetype');
+      font-display: swap;
+    }
+}
+
 @layer components {
     :root {
         @apply  font-montserrat
@@ -72,6 +86,16 @@
                 /* Colours */
                 border-purple dark:border-aqua;
     }
+
+    .blog-image {
+        @apply  flex flex-col aspect-auto
+                w-full h-auto 
+                border-dashed border-[2px]
+                /* Colours */
+                border-purple dark:border-aqua;
+    }
+
+    /* Page stuff */
 
     .page {
         @apply  
@@ -231,5 +255,120 @@
         @apply  card rounded-none p-0
                 border-[2px] border-dashed
                 border-secondary dark:border-primary;
+    }
+
+    /* Blog stuff */
+
+    .blog-title {
+        @apply  text-5xl font-bold pt-4
+                border-b-[2px] border-dashed
+                /* Colours */
+                text-secondary dark:text-primary
+                border-secondary dark:border-yellow;
+    }
+
+    .blog-post-date {
+        @apply  italic
+                text-secondary dark:text-primary;
+    }
+    
+    .blog-post-link {
+        @apply  text-start 
+                border-b-2 border-dashed
+                text-secondary 
+                hover:bg-secondary hover:bg-opacity-25
+                dark:text-primary 
+                dark:hover:bg-primary dark:hover:bg-opacity-25 text-xl
+                mb-2
+                /* Colours */
+                border-blue
+                dark:border-yellow;
+    }
+
+    .blog-post-list {
+        @apply space-y-4 p-4 w-full max-w-6xl;
+    }
+
+    .blog-post-card {
+        @apply  flex flex-col 
+                border-[2px] border-dashed 
+                space-y-4 border-red
+                dark:border-aqua
+                p-2;
+    }
+
+    .blog-dropdown {
+        @apply  border-[2px] border-dashed rounded-none appearance-none
+                p-1 m-2
+                bg-primary text-secondary
+                border-red
+                dark:bg-secondary dark:text-primary
+                dark:border-purple;
+    }
+
+    .blog-inline-link {
+        @apply  appearance-none 
+                border-b-2 border-dashed
+                text-secondary border-secondary
+                hover:bg-secondary hover:bg-opacity-25
+                dark:text-primary dark:border-primary
+                dark:hover:bg-primary dark:hover:bg-opacity-25;
+    }
+
+    .blog-prose {
+        @apply  prose place-items-center p-8 md:px-8 lg:px-12
+                w-full max-w-6xl
+                /* Colours */
+                prose-blockquote:px-4
+                prose-blockquote:bg-yellow dark:prose-blockquote:bg-purple 
+                prose-blockquote:text-secondary dark:prose-blockquote:text-primary                /* Header */
+                prose-headings:border-b-[2px] prose-headings:border-dashed 
+                prose-headings:border-secondary dark:prose-headings:border-primary
+                prose-headings:text-secondary dark:prose-headings:text-primary
+
+                /* h1 */
+                prose-h1:border-purple dark:prose-h1:border-purple
+                /* prose-h1:shadow-2xl */
+
+                /* h2 */
+                prose-h2:border-yellow dark:prose-h2:border-yellow
+                /* prose-h2:shadow-xl */
+
+                /* h3 */
+                prose-h3:border-aqua dark:prose-h3:border-aqua
+                /* prose-h3:shadow-lg */
+
+                /* h4 */
+                prose-h4:border-blue dark:prose-h4:border-blue
+
+                /* h5 */
+                prose-h5:border-red dark:prose-h5:border-red
+
+                /* h6 */
+                prose-h6:border-green dark:prose-h6:border-green
+                
+                /* Text styling */
+                /* prose-a:text-secondary dark:prose-a:text-primary
+                prose-p:text-secondary dark:prose-p:text-secondary */
+                
+                prose-pre:text-secondary dark:prose-pre:text-primary
+                prose-ul:text-secondary dark:prose-ul:text-primary
+                prose-tr:text-secondary dark:prose-tr:text-primary
+                prose-th:text-secondary dark:prose-th:text-primary
+                prose-td:text-secondary dark:prose-td:text-primary
+                prose-ol:text-secondary dark:prose-ol:text-primary
+                prose-li:text-secondary dark:prose-li:text-primary
+                /* Italic */
+                prose-em:text-secondary dark:prose-em:text-primary
+                prose-em:border-b-[2px] prose-em:border-dotted
+                prose-em:border-blue dark:prose-em:border-green
+
+                /* Bold */
+                prose-strong:text-secondary dark:prose-strong:text-primary
+                prose-strong:border-b-[2px] prose-strong:border-dashed
+                prose-strong:border-purple dark:prose-strong:border-yellow
+
+                /* Basic text */
+                text-secondary dark:text-primary;
     }
 }
